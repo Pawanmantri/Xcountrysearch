@@ -22,7 +22,7 @@ const App = () => {
   }, []);
 
   const filteredCountries = countries.filter((country) =>
-    country.name.toLowerCase().includes(searchTerm.toLowerCase())
+    country.name.common.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   if (error) {
@@ -43,9 +43,9 @@ const App = () => {
           <p>No countries match your search.</p>
         ) : (
           filteredCountries.map((country) => (
-            <div key={country.alpha3Code} className="countryCard">
-              <img src={country.flag} alt={`Flag of ${country.name}`} />
-              <p>{country.name}</p>
+            <div key={country.cca3} className="countryCard">
+              <img src={country.flags.png} alt={`Flag of ${country.name.common}`} />
+              <p>{country.name.common}</p>
             </div>
           ))
         )}
