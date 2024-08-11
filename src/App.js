@@ -10,7 +10,7 @@ const App = () => {
   useEffect(() => {
     const fetchCountries = async () => {
       try {
-        const response = await axios.get('https://xcountries-backend.azurewebsites.net/all');
+        const response = await axios.get('https://restcountries.com/v3.1/all');
         setCountries(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
